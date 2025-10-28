@@ -308,6 +308,55 @@ body {
     border-color: var(--primary-color);
 }
 
+/* Estilos para filtros de marca */
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.filter-group {
+    text-align: center;
+}
+
+.filter-group h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.brand-filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.brand-filter-btn {
+    background: var(--white);
+    border: 2px solid var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.brand-filter-btn.active,
+.brand-filter-btn:hover {
+    background: var(--accent-color);
+    color: var(--white);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1249,6 +1298,24 @@ body {
         padding-bottom: 0.5rem;
     }
 
+    .filter-section {
+        gap: 1.5rem;
+    }
+
+    .brand-filter-buttons {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        max-width: 100%;
+    }
+
+    .brand-filter-btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
     .filter-btn {
         white-space: nowrap;
         flex-shrink: 0;
@@ -1338,6 +1405,16 @@ body {
 
     .contact-form {
         padding: 1.5rem;
+    }
+
+    .filter-group h4 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .brand-filter-btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
     }
 }
 

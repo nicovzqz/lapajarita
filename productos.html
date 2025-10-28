@@ -73,12 +73,37 @@
         <div class="container">
             <div class="section-header">
                 <h2>Catálogo Completo</h2>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">Todos los Productos</button>
-                    <button class="filter-btn" data-filter="vinos">Vinos</button>
-                    <button class="filter-btn" data-filter="licores">Licores</button>
-                    <button class="filter-btn" data-filter="cervezas">Cervezas</button>
-                    <button class="filter-btn" data-filter="champagne">Champagne</button>
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <h4>Filtrar por Categoría</h4>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">Todos los Productos</button>
+                            <button class="filter-btn" data-filter="vinos">Vinos</button>
+                            <button class="filter-btn" data-filter="licores">Licores</button>
+                            <button class="filter-btn" data-filter="cervezas">Cervezas</button>
+                            <button class="filter-btn" data-filter="champagne">Champagne</button>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Filtrar por Marca</h4>
+                        <div class="brand-filter-buttons">
+                            <button class="brand-filter-btn active" data-brand="all">Todas las Marcas</button>
+                            <button class="brand-filter-btn" data-brand="luigi-bosca">Luigi Bosca</button>
+                            <button class="brand-filter-btn" data-brand="catena">Catena</button>
+                            <button class="brand-filter-btn" data-brand="escorihuela">Escorihuela</button>
+                            <button class="brand-filter-btn" data-brand="trumpeter">Trumpeter</button>
+                            <button class="brand-filter-btn" data-brand="andeluna">Andeluna</button>
+                            <button class="brand-filter-btn" data-brand="rutini">Rutini</button>
+                            <button class="brand-filter-btn" data-brand="alamos">Alamos</button>
+                            <button class="brand-filter-btn" data-brand="trapiche">Trapiche</button>
+                            <button class="brand-filter-btn" data-brand="don-david">Don David</button>
+                            <button class="brand-filter-btn" data-brand="casa-herrero">Casa de Herrero</button>
+                            <button class="brand-filter-btn" data-brand="alma-mora">Alma Mora</button>
+                            <button class="brand-filter-btn" data-brand="gran-enemigo">Gran Enemigo</button>
+                            <button class="brand-filter-btn" data-brand="judas">Judas</button>
+                            <button class="brand-filter-btn" data-brand="otras">Otras Marcas</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -201,5 +226,31 @@
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Inicialización específica para la página de productos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Renderizar todos los productos al cargar
+            if (typeof productManager !== 'undefined') {
+                productManager.renderProducts(productManager.getAllProducts());
+                
+                // Event listeners para filtros de categoría
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const category = this.getAttribute('data-filter');
+                        productManager.handleCategoryFilter(category);
+                    });
+                });
+                
+                // Event listeners para filtros de marca
+                document.querySelectorAll('.brand-filter-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const brand = this.getAttribute('data-brand');
+                        productManager.handleBrandFilter(brand);
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
