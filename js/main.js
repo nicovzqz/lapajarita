@@ -427,11 +427,17 @@ console.log(`
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 `);
 
+// Funciones globales para compatibilidad con HTML inline
+window.toggleSearchModal = toggleSearchModal;
+window.selectSearchResult = selectSearchResult;
+
 // Exportar utilidades y funciones principales
 window.lapajarita = {
     utils,
     scrollToProducts,
     toggleSearchModal,
     showNotification,
-    toggleMobileMenu
+    toggleMobileMenu,
+    performSearch,
+    selectSearchResult
 };

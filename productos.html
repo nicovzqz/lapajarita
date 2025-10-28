@@ -91,6 +91,14 @@
                             <!-- Las marcas se cargarán dinámicamente según la categoría -->
                         </div>
                     </div>
+                    <div class="filter-group">
+                        <h4>Ordenar por Precio</h4>
+                        <div class="price-sort-buttons">
+                            <button class="price-sort-btn active" data-sort="default">Sin Ordenar</button>
+                            <button class="price-sort-btn" data-sort="asc">Menor a Mayor</button>
+                            <button class="price-sort-btn" data-sort="desc">Mayor a Menor</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -217,29 +225,39 @@
     <script>
         // Inicialización específica para la página de productos
         document.addEventListener('DOMContentLoaded', function() {
-            // Renderizar todos los productos al cargar
-            if (typeof productManager !== 'undefined') {
-                productManager.renderProducts(productManager.getAllProducts());
-                
-                // Inicializar filtros de marca para "todas las categorías"
-                productManager.updateBrandFilters('all');
-                
-                // Event listeners para filtros de categoría
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const category = this.getAttribute('data-filter');
-                        productManager.handleCategoryFilter(category);
+            // Esperar a que todos los scripts se carguen
+            setTimeout(function() {
+                // Renderizar todos los productos al cargar
+                if (window.productManager) {
+                    window.productManager.renderProducts(window.productManager.getAllProducts());
+                    
+                    // Inicializar filtros de marca para "todas las categorías"
+                    window.productManager.updateBrandFilters('all');
+                    
+                    // Event listeners para filtros de categoría
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const category = this.getAttribute('data-filter');
+                            window.productManager.handleCategoryFilter(category);
+                        });
                     });
-                });
+                    
+                    // Event listener para el botón inicial "Todas las Marcas"
+                    document.addEventListener('click', function(e) {
+                        if (e.target.classList.contains('brand-filter-btn')) {
+                            const brand = e.target.getAttribute('data-brand');
+                            window.productManager.handleBrandFilter(brand);
+                        }
+                    });
+                }
                 
-                // Event listener para el botón inicial "Todas las Marcas"
-                document.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('brand-filter-btn')) {
-                        const brand = e.target.getAttribute('data-brand');
-                        productManager.handleBrandFilter(brand);
-                    }
-                });
-            }
+                // Asegurar que el buscador esté funcionando
+                if (window.lapajarita && window.lapajarita.toggleSearchModal) {
+                    console.log('Sistema de búsqueda inicializado correctamente');
+                } else {
+                    console.error('Error: Sistema de búsqueda no disponible');
+                }
+            }, 100);
         });
     </script>
 </body>

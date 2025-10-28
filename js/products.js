@@ -2477,6 +2477,13 @@ document.addEventListener('DOMContentLoaded', function() {
             closeProductModal();
         }
     });
+    
+    // Event listeners para ordenamiento por precio
+    document.querySelectorAll('.price-sort-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            handlePriceSortFilter(this.dataset.sort);
+        });
+    });
 });
 
 // Funciones para manejar cantidades en productos
@@ -2649,10 +2656,32 @@ function filterProductsByBrandAndCategory(brand, category) {
 // Variables para mantener el estado de los filtros
 let currentBrandFilter = 'all';
 let currentCategoryFilter = 'all';
+let currentPriceSortFilter = 'default';
+
+// Función para ordenar productos por precio
+function sortProductsByPrice(products, sortOrder) {
+    if (sortOrder === 'default') {
+        return products; // Mantener orden original (por ID)
+    }
+    
+    const sortedProducts = [...products]; // Crear copia para no modificar el original
+    
+    if (sortOrder === 'asc') {
+        return sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (sortOrder === 'desc') {
+        return sortedProducts.sort((a, b) => b.price - a.price);
+    }
+    
+    return sortedProducts;
+}
 
 // Función para aplicar filtros combinados
 function applyFilters() {
-    const filteredProducts = filterProductsByBrandAndCategory(currentBrandFilter, currentCategoryFilter);
+    let filteredProducts = filterProductsByBrandAndCategory(currentBrandFilter, currentCategoryFilter);
+    
+    // Aplicar ordenamiento por precio
+    filteredProducts = sortProductsByPrice(filteredProducts, currentPriceSortFilter);
+    
     renderProducts(filteredProducts);
 }
 
@@ -2777,6 +2806,20 @@ function updateBrandFilters(category) {
     brandFilterContainer.appendChild(otherButton);
 }
 
+// Función para manejar el ordenamiento por precio
+function handlePriceSortFilter(sortOrder) {
+    currentPriceSortFilter = sortOrder;
+    
+    // Actualizar botones de ordenamiento
+    document.querySelectorAll('.price-sort-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`[data-sort="${sortOrder}"]`).classList.add('active');
+    
+    // Aplicar filtros
+    applyFilters();
+}
+
 // Función para manejar el filtrado por categoría (actualizada)
 function handleCategoryFilter(category) {
     currentCategoryFilter = category;
@@ -2810,6 +2853,9 @@ window.productManager = {
     filterProductsByBrandAndCategory,
     handleBrandFilter,
     handleCategoryFilter,
+    handlePriceSortFilter,
     getBrandsByCategory,
-    updateBrandFilters
+    updateBrandFilters,
+    sortProductsByPrice,
+    applyFilters
 };
