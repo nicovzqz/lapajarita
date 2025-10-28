@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - La Pajarita</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .checkout-container {
+            max-width: 1000px;
+            margin: 120px auto 0;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+        }
+        
+        .checkout-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .order-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        
+        .form-section h3 {
+            font-family: var(--font-primary);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-family: var(--font-secondary);
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .item-image {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-quantity {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .item-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: right;
+        }
+        
+        .item-discount {
+            color: #10b981;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+        
+        .discounted-price {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .order-total {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--primary-color);
+        }
+        
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .total-line.final {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .place-order-btn {
+            width: 100%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+        
+        .place-order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+                margin-top: 100px;
+                padding: 1rem;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header simplificado -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-wine-bottle"></i> La Pajarita</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="../index.html">Volver a la tienda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h2>Finalizar Compra</h2>
+            
+            <form id="checkout-form">
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Información Personal</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Nombre *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Apellido *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Dirección de Envío</h3>
+                    <div class="form-group">
+                        <label for="address">Dirección *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">Ciudad *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">Código Postal *</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">País *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Selecciona un país</option>
+                            <option value="mx">México</option>
+                            <option value="us">Estados Unidos</option>
+                            <option value="ca">Canadá</option>
+                            <option value="es">España</option>
+                            <option value="ar">Argentina</option>
+                            <option value="co">Colombia</option>
+                            <option value="pe">Perú</option>
+                            <option value="cl">Chile</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-credit-card"></i> Método de Pago</h3>
+                    <div class="form-group">
+                        <label for="cardNumber">Número de Tarjeta *</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Fecha de Expiración *</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV *</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Nombre en la Tarjeta *</label>
+                        <input type="text" id="cardName" name="cardName" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="place-order-btn">
+                    <i class="fas fa-lock"></i>
+                    Realizar Pedido
+                </button>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h3>Resumen del Pedido</h3>
+            <div id="order-items">
+                <!-- Los items se cargarán dinámicamente -->
+            </div>
+            <div class="order-total">
+                <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>Envío:</span>
+                    <span id="shipping">$15.00</span>
+                </div>
+                <div class="total-line">
+                    <span>Impuestos:</span>
+                    <span id="taxes">$0.00</span>
+                </div>
+                <div class="total-line final">
+                    <span>Total:</span>
+                    <span id="final-total">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cargar items del carrito
+        function loadOrderItems() {
+            const cart = JSON.parse(localStorage.getItem('lapajarita-cart') || '[]');
+            const orderItemsContainer = document.getElementById('order-items');
+            
+            if (cart.length === 0) {
+                window.location.href = '../index.html';
+                return;
+            }
+            
+            // Calcular subtotal con descuentos aplicados
+            let subtotalWithoutDiscount = 0;
+            let subtotalWithDiscount = 0;
+            
+            // Renderizar items
+            orderItemsContainer.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                const hasDiscount = item.quantity % 6 === 0 && item.quantity > 0;
+                const discountedTotal = hasDiscount ? itemTotal * 0.95 : itemTotal;
+                
+                subtotalWithoutDiscount += itemTotal;
+                subtotalWithDiscount += discountedTotal;
+                
+                return `
+                    <div class="order-item">
+                        <div class="item-image">
+                            <i class="fas fa-wine-bottle"></i>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-name">${item.name}</div>
+                            <div class="item-quantity">Cantidad: ${item.quantity}</div>
+                            ${hasDiscount ? `<div class="item-discount">5% descuento aplicado</div>` : ''}
+                        </div>
+                        <div class="item-price">
+                            ${hasDiscount ? `
+                                <div class="original-price">$${itemTotal.toFixed(2)}</div>
+                                <div class="discounted-price">$${discountedTotal.toFixed(2)}</div>
+                            ` : `
+                                $${discountedTotal.toFixed(2)}
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            const discount = subtotalWithoutDiscount - subtotalWithDiscount;
+            const shipping = 150.00; // Ajustado para la nueva escala de precios
+            const taxes = subtotalWithDiscount * 0.08; // 8% de impuestos
+            const finalTotal = subtotalWithDiscount + shipping + taxes;
+            
+            // Actualizar totales
+            document.getElementById('subtotal').textContent = `$${subtotalWithDiscount.toFixed(2)}`;
+            document.getElementById('taxes').textContent = `$${taxes.toFixed(2)}`;
+            document.getElementById('final-total').textContent = `$${finalTotal.toFixed(2)}`;
+            
+            // Mostrar línea de descuento si hay descuentos
+            if (discount > 0) {
+                const taxesElement = document.getElementById('taxes').parentElement;
+                const discountLine = document.createElement('div');
+                discountLine.className = 'total-line';
+                discountLine.innerHTML = `
+                    <span>Descuento aplicado:</span>
+                    <span style="color: #10b981;">-$${discount.toFixed(2)}</span>
+                `;
+                taxesElement.parentElement.insertBefore(discountLine, taxesElement);
+            }
+        }
+        
+        // Formatear número de tarjeta
+        document.getElementById('cardNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || '';
+            if (formattedValue !== e.target.value) {
+                e.target.value = formattedValue;
+            }
+        });
+        
+        // Formatear fecha de expiración
+        document.getElementById('expiryDate').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+        
+        // Validar CVV
+        document.getElementById('cvv').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+        });
+        
+        // Procesar pedido
+        document.getElementById('checkout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular procesamiento
+            const btn = document.querySelector('.place-order-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                // Limpiar carrito
+                localStorage.removeItem('lapajarita-cart');
+                
+                // Mostrar éxito y redirigir
+                alert('¡Pedido realizado con éxito! Recibirás un email de confirmación.');
+                window.location.href = '../index.html';
+            }, 3000);
+        });
+        
+        // Cargar items al inicializar
+        document.addEventListener('DOMContentLoaded', loadOrderItems);
+    </script>
+</body>
+</html>

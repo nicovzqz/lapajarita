@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - La Pajarita</title>
+    <meta name="description" content="Explora nuestra amplia selección de vinos, licores, cervezas y champagne premium con los mejores precios.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-wine-bottle"></i> La Pajarita</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html" class="active">Productos</a></li>
+                        <li><a href="index.html#categorias">Categorías</a></li>
+                        <li><a href="index.html#about">Nosotros</a></li>
+                        <li><a href="index.html#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-btn" onclick="toggleSearchModal()" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="cart-btn" onclick="toggleCart()" aria-label="Carrito de compras">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Menú móvil">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section para Productos -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="products-hero-content">
+                <h1>Nuestros Productos Premium</h1>
+                <p>Descubre nuestra exclusiva selección de bebidas alcohólicas cuidadosamente elegidas para los paladares más exigentes</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Productos Premium</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Categorías</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5%</span>
+                        <span class="stat-label">Descuento x6 unidades</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Catálogo Completo</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos los Productos</button>
+                    <button class="filter-btn" data-filter="vinos">Vinos</button>
+                    <button class="filter-btn" data-filter="licores">Licores</button>
+                    <button class="filter-btn" data-filter="cervezas">Cervezas</button>
+                    <button class="filter-btn" data-filter="champagne">Champagne</button>
+                </div>
+            </div>
+            
+            <!-- Información sobre descuentos -->
+            <div class="discount-banner">
+                <div class="discount-content">
+                    <i class="fas fa-gift"></i>
+                    <div class="discount-text">
+                        <h3>¡Descuento Especial!</h3>
+                        <p>Obtén <strong>5% de descuento</strong> comprando múltiplos de 6 unidades de cualquier producto</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-wine-bottle"></i> La Pajarita</h3>
+                    <p>Tu tienda de confianza para las mejores bebidas alcohólicas.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook" aria-label="Síguenos en Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter" aria-label="Síguenos en Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="WhatsApp" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#vinos">Vinos</a></li>
+                        <li><a href="#licores">Licores</a></li>
+                        <li><a href="#cervezas">Cervezas</a></li>
+                        <li><a href="#champagne">Champagne</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="index.html#about">Sobre nosotros</a></li>
+                        <li><a href="#shipping">Envíos</a></li>
+                        <li><a href="#returns">Devoluciones</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@lapajarita.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 La Pajarita. Todos los derechos reservados.</p>
+                <p>Prohibida la venta de bebidas alcohólicas a menores de edad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <button class="close-cart" onclick="toggleCart()" title="Cerrar carrito" aria-label="Cerrar carrito">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Los items del carrito se cargarán aquí -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cart-total">0.00</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="clear-cart-btn" onclick="clearCart()">Vaciar Carrito</button>
+                    <button class="checkout-btn" onclick="proceedToCheckout()">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Producto -->
+    <div class="product-modal" id="product-modal">
+        <div class="product-modal-content">
+            <button class="close-modal" onclick="closeProductModal()" title="Cerrar" aria-label="Cerrar producto">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="product-modal-body">
+                <!-- Contenido del producto se cargará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Búsqueda -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <div class="search-header">
+                <input type="text" id="search-input" placeholder="Buscar productos...">
+                <button class="close-search" onclick="toggleSearchModal()" title="Cerrar búsqueda" aria-label="Cerrar búsqueda">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results" id="search-results">
+                <!-- Los resultados de búsqueda se cargarán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
