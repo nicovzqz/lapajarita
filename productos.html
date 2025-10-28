@@ -86,22 +86,9 @@
                     </div>
                     <div class="filter-group">
                         <h4>Filtrar por Marca</h4>
-                        <div class="brand-filter-buttons">
+                        <div class="brand-filter-buttons" id="brand-filter-buttons">
                             <button class="brand-filter-btn active" data-brand="all">Todas las Marcas</button>
-                            <button class="brand-filter-btn" data-brand="luigi-bosca">Luigi Bosca</button>
-                            <button class="brand-filter-btn" data-brand="catena">Catena</button>
-                            <button class="brand-filter-btn" data-brand="escorihuela">Escorihuela</button>
-                            <button class="brand-filter-btn" data-brand="trumpeter">Trumpeter</button>
-                            <button class="brand-filter-btn" data-brand="andeluna">Andeluna</button>
-                            <button class="brand-filter-btn" data-brand="rutini">Rutini</button>
-                            <button class="brand-filter-btn" data-brand="alamos">Alamos</button>
-                            <button class="brand-filter-btn" data-brand="trapiche">Trapiche</button>
-                            <button class="brand-filter-btn" data-brand="don-david">Don David</button>
-                            <button class="brand-filter-btn" data-brand="casa-herrero">Casa de Herrero</button>
-                            <button class="brand-filter-btn" data-brand="alma-mora">Alma Mora</button>
-                            <button class="brand-filter-btn" data-brand="gran-enemigo">Gran Enemigo</button>
-                            <button class="brand-filter-btn" data-brand="judas">Judas</button>
-                            <button class="brand-filter-btn" data-brand="otras">Otras Marcas</button>
+                            <!-- Las marcas se cargarán dinámicamente según la categoría -->
                         </div>
                     </div>
                 </div>
@@ -234,6 +221,9 @@
             if (typeof productManager !== 'undefined') {
                 productManager.renderProducts(productManager.getAllProducts());
                 
+                // Inicializar filtros de marca para "todas las categorías"
+                productManager.updateBrandFilters('all');
+                
                 // Event listeners para filtros de categoría
                 document.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.addEventListener('click', function() {
@@ -242,12 +232,12 @@
                     });
                 });
                 
-                // Event listeners para filtros de marca
-                document.querySelectorAll('.brand-filter-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const brand = this.getAttribute('data-brand');
+                // Event listener para el botón inicial "Todas las Marcas"
+                document.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('brand-filter-btn')) {
+                        const brand = e.target.getAttribute('data-brand');
                         productManager.handleBrandFilter(brand);
-                    });
+                    }
                 });
             }
         });

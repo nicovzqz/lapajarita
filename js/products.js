@@ -1888,6 +1888,352 @@ const productos = [
         badge: "Zuccardi Q",
         stock: 12,
         packSize: 6
+    },
+    // LICORES
+    {
+        id: 178,
+        name: "Whisky Johnnie Walker Black Label",
+        category: "licores",
+        price: 45000.00,
+        image: "whisky-johnnie-walker.jpg",
+        description: "Whisky escocés premium con 12 años de maduración y sabores ahumados.",
+        badge: "Premium",
+        stock: 15,
+        packSize: 6
+    },
+    {
+        id: 179,
+        name: "Whisky Jameson Irish",
+        category: "licores",
+        price: 38500.00,
+        image: "whisky-jameson.jpg",
+        description: "Whisky irlandés suave y equilibrado, perfecto para cualquier ocasión.",
+        stock: 20,
+        packSize: 6
+    },
+    {
+        id: 180,
+        name: "Ron Havana Club 7 Años",
+        category: "licores",
+        price: 32000.00,
+        image: "ron-havana-club.jpg",
+        description: "Ron cubano añejado 7 años con notas de vainilla y caramelo.",
+        badge: "Añejo",
+        stock: 18,
+        packSize: 6
+    },
+    {
+        id: 181,
+        name: "Ron Bacardi Superior",
+        category: "licores",
+        price: 18500.00,
+        image: "ron-bacardi.jpg",
+        description: "Ron blanco premium ideal para cócteles y tragos refrescantes.",
+        stock: 25,
+        packSize: 6
+    },
+    {
+        id: 182,
+        name: "Vodka Absolut Original",
+        category: "licores",
+        price: 28000.00,
+        image: "vodka-absolut.jpg",
+        description: "Vodka sueco premium destilado con trigo de invierno, puro y suave.",
+        badge: "Premium",
+        stock: 22,
+        packSize: 6
+    },
+    {
+        id: 183,
+        name: "Vodka Grey Goose",
+        category: "licores",
+        price: 55000.00,
+        image: "vodka-grey-goose.jpg",
+        description: "Vodka francés ultra premium, destilado cinco veces para máxima pureza.",
+        badge: "Ultra Premium",
+        stock: 10,
+        packSize: 6
+    },
+    {
+        id: 184,
+        name: "Gin Bombay Sapphire",
+        category: "licores",
+        price: 35000.00,
+        image: "gin-bombay.jpg",
+        description: "Gin inglés premium con 10 botánicos cuidadosamente seleccionados.",
+        badge: "Premium",
+        stock: 16,
+        packSize: 6
+    },
+    {
+        id: 185,
+        name: "Gin Tanqueray London Dry",
+        category: "licores",
+        price: 32500.00,
+        image: "gin-tanqueray.jpg",
+        description: "Gin londinense clásico con enebro, cilantro, angélica y regaliz.",
+        stock: 18,
+        packSize: 6
+    },
+    {
+        id: 186,
+        name: "Tequila José Cuervo Especial",
+        category: "licores",
+        price: 25000.00,
+        image: "tequila-jose-cuervo.jpg",
+        description: "Tequila mexicano tradicional perfecto para margaritas y shots.",
+        stock: 24,
+        packSize: 6
+    },
+    {
+        id: 187,
+        name: "Tequila Don Julio 70",
+        category: "licores",
+        price: 48000.00,
+        image: "tequila-don-julio.jpg",
+        description: "Tequila cristalino premium con sabor añejo y suavidad única.",
+        badge: "Cristalino",
+        stock: 12,
+        packSize: 6
+    },
+    {
+        id: 188,
+        name: "Cognac Hennessy VS",
+        category: "licores",
+        price: 42000.00,
+        image: "cognac-hennessy.jpg",
+        description: "Cognac francés con notas frutales y especiadas, elegante y refinado.",
+        badge: "VS",
+        stock: 14,
+        packSize: 6
+    },
+    {
+        id: 189,
+        name: "Pisco Control C",
+        category: "licores",
+        price: 15000.00,
+        image: "pisco-control-c.jpg",
+        description: "Pisco peruano premium ideal para pisco sour y cócteles tradicionales.",
+        stock: 20,
+        packSize: 6
+    },
+    // CERVEZAS
+    {
+        id: 190,
+        name: "Cerveza Corona Extra",
+        category: "cervezas",
+        price: 3200.00,
+        image: "cerveza-corona.jpg",
+        description: "Cerveza mexicana ligera y refrescante, perfecta con limón.",
+        badge: "Clásica",
+        stock: 50,
+        packSize: 24
+    },
+    {
+        id: 191,
+        name: "Cerveza Heineken",
+        category: "cervezas",
+        price: 3800.00,
+        image: "cerveza-heineken.jpg",
+        description: "Cerveza holandesa premium con sabor distintivo y refrescante.",
+        badge: "Premium",
+        stock: 45,
+        packSize: 24
+    },
+    {
+        id: 192,
+        name: "Cerveza Stella Artois",
+        category: "cervezas",
+        price: 4200.00,
+        image: "cerveza-stella.jpg",
+        description: "Cerveza belga premium con 600 años de tradición cervecera.",
+        badge: "Belga",
+        stock: 40,
+        packSize: 24
+    },
+    {
+        id: 193,
+        name: "Cerveza Patagonia Bohemian Pilsener",
+        category: "cervezas",
+        price: 2800.00,
+        image: "cerveza-patagonia.jpg",
+        description: "Cerveza artesanal argentina con maltas especiales y lúpulo noble.",
+        badge: "Artesanal",
+        stock: 35,
+        packSize: 12
+    },
+    {
+        id: 194,
+        name: "Cerveza Quilmes Clásica",
+        category: "cervezas",
+        price: 2200.00,
+        image: "cerveza-quilmes.jpg",
+        description: "Cerveza argentina tradicional, fresca y con carácter nacional.",
+        stock: 60,
+        packSize: 24
+    },
+    {
+        id: 195,
+        name: "Cerveza Andes Origen",
+        category: "cervezas",
+        price: 2400.00,
+        image: "cerveza-andes.jpg",
+        description: "Cerveza argentina premium elaborada con agua pura de los Andes.",
+        stock: 45,
+        packSize: 12
+    },
+    {
+        id: 196,
+        name: "Cerveza IPA Antares",
+        category: "cervezas",
+        price: 3500.00,
+        image: "cerveza-antares-ipa.jpg",
+        description: "IPA argentina con intenso amargor y aromas cítricos del lúpulo.",
+        badge: "IPA",
+        stock: 30,
+        packSize: 12
+    },
+    {
+        id: 197,
+        name: "Cerveza Honey Beer Antares",
+        category: "cervezas",
+        price: 3200.00,
+        image: "cerveza-antares-honey.jpg",
+        description: "Cerveza con miel argentina, dulce y refrescante con toques naturales.",
+        badge: "Honey",
+        stock: 25,
+        packSize: 12
+    },
+    {
+        id: 198,
+        name: "Cerveza Temple Hoppy Lager",
+        category: "cervezas",
+        price: 2900.00,
+        image: "cerveza-temple.jpg",
+        description: "Lager argentina con carácter hoppy y gran refrescancia.",
+        stock: 38,
+        packSize: 12
+    },
+    {
+        id: 199,
+        name: "Cerveza Kross Golden Ale",
+        category: "cervezas",
+        price: 3100.00,
+        image: "cerveza-kross.jpg",
+        description: "Golden Ale artesanal con maltas especiales y gran equilibrio.",
+        badge: "Golden",
+        stock: 32,
+        packSize: 12
+    },
+    // CHAMPAGNE Y ESPUMANTES
+    {
+        id: 200,
+        name: "Champagne Moët & Chandon Brut",
+        category: "champagne",
+        price: 85000.00,
+        image: "champagne-moet.jpg",
+        description: "Champagne francés icónico, elegante y con finas burbujas persistentes.",
+        badge: "Icónico",
+        stock: 8,
+        packSize: 6
+    },
+    {
+        id: 201,
+        name: "Champagne Veuve Clicquot Brut",
+        category: "champagne",
+        price: 78000.00,
+        image: "champagne-veuve.jpg",
+        description: "Champagne francés premium con gran personalidad y estructura.",
+        badge: "Premium",
+        stock: 10,
+        packSize: 6
+    },
+    {
+        id: 202,
+        name: "Espumante Chandon Extra Brut",
+        category: "champagne",
+        price: 18500.00,
+        image: "espumante-chandon.jpg",
+        description: "Espumante argentino premium método tradicional con gran fineza.",
+        badge: "Extra Brut",
+        stock: 25,
+        packSize: 6
+    },
+    {
+        id: 203,
+        name: "Espumante Mumm Cuvée Réserve",
+        category: "champagne",
+        price: 16800.00,
+        image: "espumante-mumm.jpg",
+        description: "Espumante argentino con método champenoise y gran elegancia.",
+        stock: 20,
+        packSize: 6
+    },
+    {
+        id: 204,
+        name: "Espumante Norton Brut Nature",
+        category: "champagne",
+        price: 14200.00,
+        image: "espumante-norton.jpg",
+        description: "Espumante sin azúcar residual, puro y con gran mineralidad.",
+        badge: "Brut Nature",
+        stock: 22,
+        packSize: 6
+    },
+    {
+        id: 205,
+        name: "Prosecco Martini & Rossi",
+        category: "champagne",
+        price: 12500.00,
+        image: "prosecco-martini.jpg",
+        description: "Prosecco italiano fresco y vivaz, perfecto para aperitivos.",
+        badge: "Italiano",
+        stock: 30,
+        packSize: 6
+    },
+    {
+        id: 206,
+        name: "Cava Freixenet Carta Nevada",
+        category: "champagne",
+        price: 8900.00,
+        image: "cava-freixenet.jpg",
+        description: "Cava español tradicional con gran frescura y elegancia.",
+        badge: "Español",
+        stock: 35,
+        packSize: 6
+    },
+    {
+        id: 207,
+        name: "Espumante Cruzat Cuvée Rosé",
+        category: "champagne",
+        price: 22000.00,
+        image: "espumante-cruzat-rose.jpg",
+        description: "Espumante rosé argentino premium con gran delicadeza y color.",
+        badge: "Rosé",
+        stock: 15,
+        packSize: 6
+    },
+    {
+        id: 208,
+        name: "Dom Pérignon Vintage",
+        category: "champagne",
+        price: 285000.00,
+        image: "champagne-dom-perignon.jpg",
+        description: "El champagne más prestigioso del mundo, símbolo de lujo absoluto.",
+        badge: "Vintage",
+        stock: 3,
+        packSize: 3
+    },
+    {
+        id: 209,
+        name: "Espumante Bianchi Demi Sec",
+        category: "champagne",
+        price: 11800.00,
+        image: "espumante-bianchi.jpg",
+        description: "Espumante argentino demi sec con ligera dulzura y gran equilibrio.",
+        badge: "Demi Sec",
+        stock: 28,
+        packSize: 6
     }
 ];
 
@@ -2215,6 +2561,7 @@ document.addEventListener('input', function(e) {
 function assignBrandToProduct(productName) {
     const name = productName.toLowerCase();
     
+    // Marcas de vinos
     if (name.includes('luigi bosca')) return 'luigi-bosca';
     if (name.includes('catena') || name.includes('dv catena') || name.includes('nicolas catena') || name.includes('nicola catena')) return 'catena';
     if (name.includes('escorihuela')) return 'escorihuela';
@@ -2228,6 +2575,43 @@ function assignBrandToProduct(productName) {
     if (name.includes('alma mora')) return 'alma-mora';
     if (name.includes('gran enemigo')) return 'gran-enemigo';
     if (name.includes('judas') || name.includes('piel de judas')) return 'judas';
+    
+    // Marcas de licores
+    if (name.includes('johnnie walker')) return 'johnnie-walker';
+    if (name.includes('jameson')) return 'jameson';
+    if (name.includes('havana club')) return 'havana-club';
+    if (name.includes('bacardi')) return 'bacardi';
+    if (name.includes('absolut')) return 'absolut';
+    if (name.includes('grey goose')) return 'grey-goose';
+    if (name.includes('bombay')) return 'bombay';
+    if (name.includes('tanqueray')) return 'tanqueray';
+    if (name.includes('josé cuervo') || name.includes('jose cuervo')) return 'jose-cuervo';
+    if (name.includes('don julio')) return 'don-julio';
+    if (name.includes('hennessy')) return 'hennessy';
+    if (name.includes('control c')) return 'control-c';
+    
+    // Marcas de cervezas
+    if (name.includes('corona')) return 'corona';
+    if (name.includes('heineken')) return 'heineken';
+    if (name.includes('stella artois')) return 'stella-artois';
+    if (name.includes('patagonia')) return 'patagonia';
+    if (name.includes('quilmes')) return 'quilmes';
+    if (name.includes('andes')) return 'andes';
+    if (name.includes('antares')) return 'antares';
+    if (name.includes('temple')) return 'temple';
+    if (name.includes('kross')) return 'kross';
+    
+    // Marcas de champagne/espumantes
+    if (name.includes('moët') || name.includes('moet')) return 'moet-chandon';
+    if (name.includes('veuve clicquot')) return 'veuve-clicquot';
+    if (name.includes('chandon')) return 'chandon';
+    if (name.includes('mumm')) return 'mumm';
+    if (name.includes('norton')) return 'norton';
+    if (name.includes('martini')) return 'martini';
+    if (name.includes('freixenet')) return 'freixenet';
+    if (name.includes('cruzat')) return 'cruzat';
+    if (name.includes('dom pérignon') || name.includes('dom perignon')) return 'dom-perignon';
+    if (name.includes('bianchi')) return 'bianchi';
     
     return 'otras';
 }
@@ -2286,15 +2670,126 @@ function handleBrandFilter(brand) {
     applyFilters();
 }
 
+// Función para obtener marcas por categoría
+function getBrandsByCategory(category) {
+    const brandsByCategory = {
+        'vinos': [
+            { id: 'luigi-bosca', name: 'Luigi Bosca' },
+            { id: 'catena', name: 'Catena' },
+            { id: 'escorihuela', name: 'Escorihuela' },
+            { id: 'trumpeter', name: 'Trumpeter' },
+            { id: 'andeluna', name: 'Andeluna' },
+            { id: 'rutini', name: 'Rutini' },
+            { id: 'alamos', name: 'Alamos' },
+            { id: 'trapiche', name: 'Trapiche' },
+            { id: 'don-david', name: 'Don David' },
+            { id: 'casa-herrero', name: 'Casa de Herrero' },
+            { id: 'alma-mora', name: 'Alma Mora' },
+            { id: 'gran-enemigo', name: 'Gran Enemigo' },
+            { id: 'judas', name: 'Judas' }
+        ],
+        'licores': [
+            { id: 'johnnie-walker', name: 'Johnnie Walker' },
+            { id: 'jameson', name: 'Jameson' },
+            { id: 'havana-club', name: 'Havana Club' },
+            { id: 'bacardi', name: 'Bacardi' },
+            { id: 'absolut', name: 'Absolut' },
+            { id: 'grey-goose', name: 'Grey Goose' },
+            { id: 'bombay', name: 'Bombay' },
+            { id: 'tanqueray', name: 'Tanqueray' },
+            { id: 'jose-cuervo', name: 'José Cuervo' },
+            { id: 'don-julio', name: 'Don Julio' },
+            { id: 'hennessy', name: 'Hennessy' },
+            { id: 'control-c', name: 'Control C' }
+        ],
+        'cervezas': [
+            { id: 'corona', name: 'Corona' },
+            { id: 'heineken', name: 'Heineken' },
+            { id: 'stella-artois', name: 'Stella Artois' },
+            { id: 'patagonia', name: 'Patagonia' },
+            { id: 'quilmes', name: 'Quilmes' },
+            { id: 'andes', name: 'Andes' },
+            { id: 'antares', name: 'Antares' },
+            { id: 'temple', name: 'Temple' },
+            { id: 'kross', name: 'Kross' }
+        ],
+        'champagne': [
+            { id: 'moet-chandon', name: 'Moët & Chandon' },
+            { id: 'veuve-clicquot', name: 'Veuve Clicquot' },
+            { id: 'chandon', name: 'Chandon' },
+            { id: 'mumm', name: 'Mumm' },
+            { id: 'norton', name: 'Norton' },
+            { id: 'martini', name: 'Martini' },
+            { id: 'freixenet', name: 'Freixenet' },
+            { id: 'cruzat', name: 'Cruzat' },
+            { id: 'dom-perignon', name: 'Dom Pérignon' },
+            { id: 'bianchi', name: 'Bianchi' }
+        ]
+    };
+
+    if (category === 'all') {
+        // Retornar todas las marcas de todas las categorías
+        const allBrands = [];
+        Object.values(brandsByCategory).forEach(brands => {
+            brands.forEach(brand => {
+                if (!allBrands.find(b => b.id === brand.id)) {
+                    allBrands.push(brand);
+                }
+            });
+        });
+        return allBrands;
+    }
+
+    return brandsByCategory[category] || [];
+}
+
+// Función para actualizar los filtros de marca según la categoría
+function updateBrandFilters(category) {
+    const brandFilterContainer = document.getElementById('brand-filter-buttons');
+    if (!brandFilterContainer) return;
+
+    // Obtener marcas de la categoría
+    const brands = getBrandsByCategory(category);
+    
+    // Limpiar filtros existentes (excepto "Todas las Marcas")
+    brandFilterContainer.innerHTML = '<button class="brand-filter-btn active" data-brand="all">Todas las Marcas</button>';
+    
+    // Agregar marcas específicas
+    brands.forEach(brand => {
+        const button = document.createElement('button');
+        button.className = 'brand-filter-btn';
+        button.setAttribute('data-brand', brand.id);
+        button.textContent = brand.name;
+        button.addEventListener('click', function() {
+            handleBrandFilter(brand.id);
+        });
+        brandFilterContainer.appendChild(button);
+    });
+
+    // Agregar "Otras Marcas" al final
+    const otherButton = document.createElement('button');
+    otherButton.className = 'brand-filter-btn';
+    otherButton.setAttribute('data-brand', 'otras');
+    otherButton.textContent = 'Otras Marcas';
+    otherButton.addEventListener('click', function() {
+        handleBrandFilter('otras');
+    });
+    brandFilterContainer.appendChild(otherButton);
+}
+
 // Función para manejar el filtrado por categoría (actualizada)
 function handleCategoryFilter(category) {
     currentCategoryFilter = category;
+    currentBrandFilter = 'all'; // Resetear filtro de marca
     
     // Actualizar botones de categoría
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     document.querySelector(`[data-filter="${category}"]`).classList.add('active');
+    
+    // Actualizar filtros de marca según la categoría
+    updateBrandFilters(category);
     
     // Aplicar filtros
     applyFilters();
@@ -2314,5 +2809,7 @@ window.productManager = {
     getProductsByBrand,
     filterProductsByBrandAndCategory,
     handleBrandFilter,
-    handleCategoryFilter
+    handleCategoryFilter,
+    getBrandsByCategory,
+    updateBrandFilters
 };
